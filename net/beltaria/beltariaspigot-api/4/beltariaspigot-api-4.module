@@ -3,7 +3,7 @@
   "component": {
     "group": "net.beltaria",
     "module": "beltariaspigot-api",
-    "version": "3",
+    "version": "4",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -131,8 +131,8 @@
       ],
       "files": [
         {
-          "name": "beltariaspigot-api-3.jar",
-          "url": "beltariaspigot-api-3.jar",
+          "name": "beltariaspigot-api-4.jar",
+          "url": "beltariaspigot-api-4.jar",
           "size": 998537,
           "sha512": "68ef3418505852be201ec73dd6437526971ca832113305813e864ab772ed0c8914c06e53d5e50083234dca4c0b4081a6f3408a461f5f74f467203170493f71e8",
           "sha256": "3683b66ebbe4e03925a9944c769074b6a819cb3f3318e095b84597003d2367b8",
@@ -251,8 +251,8 @@
       ],
       "files": [
         {
-          "name": "beltariaspigot-api-3.jar",
-          "url": "beltariaspigot-api-3.jar",
+          "name": "beltariaspigot-api-4.jar",
+          "url": "beltariaspigot-api-4.jar",
           "size": 998537,
           "sha512": "68ef3418505852be201ec73dd6437526971ca832113305813e864ab772ed0c8914c06e53d5e50083234dca4c0b4081a6f3408a461f5f74f467203170493f71e8",
           "sha256": "3683b66ebbe4e03925a9944c769074b6a819cb3f3318e095b84597003d2367b8",
@@ -271,8 +271,8 @@
       },
       "files": [
         {
-          "name": "beltariaspigot-api-3-sources.jar",
-          "url": "beltariaspigot-api-3-sources.jar",
+          "name": "beltariaspigot-api-4-sources.jar",
+          "url": "beltariaspigot-api-4-sources.jar",
           "size": 702419,
           "sha512": "bad4c526cf1169ad747ba83ba5ee880e0d8042d3a4c882094a1dfcbe55217e5b79f2f99c6a75588022685bf570dde59ef757930b3e84c10f09ae0485b7a52704",
           "sha256": "8c2e44ca5d406d1b5272f9b652d59aab1fc74e7fe7de9ff9a088c01313a4db41",
@@ -291,8 +291,8 @@
       },
       "files": [
         {
-          "name": "beltariaspigot-api-3-javadoc.jar",
-          "url": "beltariaspigot-api-3-javadoc.jar",
+          "name": "beltariaspigot-api-4-javadoc.jar",
+          "url": "beltariaspigot-api-4-javadoc.jar",
           "size": 3596458,
           "sha512": "cd9c4cce990680031c82690c3f556d1e6afbf1593483f3a092f422821e7cd3432b802ab78024876074ec358c1996330e461be1dcab35d9e9f0093274c7ee7baf",
           "sha256": "78b6d576a0c1c3de63a3e901a8bf291540c3400c2e1c718a5531495b1ae95870",
