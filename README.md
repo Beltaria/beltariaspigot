@@ -23,15 +23,10 @@ dependencies {
 Note: raw.githubusercontent.com is CDN-cached for ~5 minutes; freshly published
 artifacts can take that long to appear.
 
-## Publishing (maintainers)
+## Publishing (automated)
 
-From this repository's checkout, with the BeltariaSpigot working copy as a sibling of
-the `1.8.8` folder layout:
-
-```powershell
-.\publish-api.ps1
-```
-
-The script runs `:beltariaspigot-api:publishToMavenLocal` in the BeltariaSpigot
-checkout, copies the `net/beltaria` tree from `~/.m2/repository` into this repo,
-renames `maven-metadata-local.xml` to `maven-metadata.xml`, and commits + pushes.
+Do not commit artifacts here by hand. The **Publish API** workflow in the private
+BeltariaSpigot repository builds `beltariaspigot-api` and pushes it here whenever an
+API-affecting change lands on `master` (API patches, upstream bump, build logic), or on
+manual dispatch. It authenticates with a deploy key scoped to this repository only
+(`MAVEN_DEPLOY_KEY` secret in BeltariaSpigot).
