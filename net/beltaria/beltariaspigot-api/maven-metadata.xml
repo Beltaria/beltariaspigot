@@ -3,11 +3,10 @@
   <groupId>net.beltaria</groupId>
   <artifactId>beltariaspigot-api</artifactId>
   <versioning>
-    <latest>4</latest>
-    <release>4</release>
+    <latest>1.8.8-R0.1-SNAPSHOT</latest>
     <versions>
-      <version>4</version>
+      <version>1.8.8-R0.1-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20260818174609</lastUpdated>
+    <lastUpdated>20260818183412</lastUpdated>
   </versioning>
 </metadata>

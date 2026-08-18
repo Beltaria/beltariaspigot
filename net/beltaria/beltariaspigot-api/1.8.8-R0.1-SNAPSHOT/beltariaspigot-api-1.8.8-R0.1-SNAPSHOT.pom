@@ -9,7 +9,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.beltaria</groupId>
   <artifactId>beltariaspigot-api</artifactId>
-  <version>4</version>
+  <version>1.8.8-R0.1-SNAPSHOT</version>
   <name>beltariaspigot-api</name>
   <url>https://github.com/usr-sch/BeltariaSpigot</url>
   <licenses>
