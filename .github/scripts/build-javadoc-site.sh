@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Builds the GitHub Pages site for Beltaria/maven out of the javadoc jars committed under net/.
+# Builds the GitHub Pages site for Beltaria/beltariaspigot out of the javadoc jars committed under net/.
 # Nothing here is artifact-specific: every net/<group...>/<artifactId>/<version>/ directory
 # holding a *-javadoc.jar becomes /<artifactId>/<version>/ on the site, and each artifact also
 # gets a /<artifactId>/latest/ alias. Publishing a new artifact or a new version needs no change
@@ -136,9 +136,9 @@ done
 <body>
 <h1>Beltaria Maven &mdash; Javadoc</h1>
 <p class="sub">API documentation unpacked from the <code>-javadoc.jar</code> artifacts in
-<a href="https://github.com/Beltaria/maven">Beltaria/maven</a>, rebuilt on every publish.
+<a href="https://github.com/Beltaria/beltariaspigot">Beltaria/beltariaspigot</a>, rebuilt on every publish.
 The jars themselves are still resolved from
-<code>https://raw.githubusercontent.com/Beltaria/maven/main/</code>.</p>
+<code>https://raw.githubusercontent.com/Beltaria/beltariaspigot/main/</code>.</p>
 HTML
 
   for artifact_id in $(printf '%s\n' "${!artifact_group[@]}" | sort); do

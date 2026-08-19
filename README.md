@@ -1,16 +1,22 @@
-# Beltaria Maven repository
+# BeltariaSpigot
 
-Public Maven artifacts for the Beltaria server ecosystem, served straight from this
-repository. Currently hosts **`net.beltaria:beltariaspigot-api`** (the BeltariaSpigot
-plugin API — the server itself stays private; the API is just interfaces).
+The public home of **BeltariaSpigot**, a Minecraft 1.8.8 server fork built on
+[PandaSpigot](https://github.com/hpfxd/PandaSpigot). The server itself stays private; this
+repository is what it publishes.
 
-## Consuming
+| | |
+| --- | --- |
+| **[Javadoc](https://beltaria.github.io/beltariaspigot/beltariaspigot-api/latest/)** | The plugin API, plus [what this fork adds](https://beltaria.github.io/beltariaspigot/) |
+| **[Wiki](https://github.com/Beltaria/beltariaspigot/wiki)** | [Configuration reference](https://github.com/Beltaria/beltariaspigot/wiki/Configuration) and [commands](https://github.com/Beltaria/beltariaspigot/wiki/Commands) |
+| **Maven** | `net.beltaria:beltariaspigot-api`, served from this repository — see below |
+
+## Consuming the API
 
 Gradle (Kotlin DSL):
 
 ```kotlin
 repositories {
-    maven("https://raw.githubusercontent.com/Beltaria/maven/main/") {
+    maven("https://raw.githubusercontent.com/Beltaria/beltariaspigot/main/") {
         content { includeGroup("net.beltaria") }
     }
 }
@@ -26,11 +32,11 @@ artifacts can take that long to appear.
 ## Javadoc
 
 Browsable API docs, unpacked from the published `-javadoc.jar` on every publish:
-**<https://beltaria.github.io/maven/beltariaspigot-api/latest/>**
+**<https://beltaria.github.io/beltariaspigot/beltariaspigot-api/latest/>**
 
 `/latest/` is a stable alias for the current version and is safe to deep-link; the exact
 version is also served at `/beltariaspigot-api/1.8.8-R0.1-SNAPSHOT/`. The index at
-<https://beltaria.github.io/maven/> lists everything available.
+<https://beltaria.github.io/beltariaspigot/> lists everything available.
 
 That index also carries a **What BeltariaSpigot adds** section: every API addition this
 fork makes on top of PandaSpigot, deep-linked into the javadoc. It is generated from the
@@ -41,7 +47,7 @@ up on their own.
 Downstream javadoc builds can cross-link into it:
 
 ```
-javadoc -link https://beltaria.github.io/maven/beltariaspigot-api/latest/
+javadoc -link https://beltaria.github.io/beltariaspigot/beltariaspigot-api/latest/
 ```
 
 The site is built by the **Publish Javadoc** workflow and deployed straight from the Actions
@@ -52,10 +58,10 @@ artifact — no HTML is ever committed to this repository, and the Maven tree co
 
 The full `pandaspigot.yml` reference — all 146 options with their types, defaults and
 descriptions — is in this repository's wiki:
-**<https://github.com/Beltaria/maven/wiki/Configuration>**
+**<https://github.com/Beltaria/beltariaspigot/wiki/Configuration>**
 
-Options are split by scope: [global](https://github.com/Beltaria/maven/wiki/Configuration-Global)
-settings, and [per-world](https://github.com/Beltaria/maven/wiki/Configuration-Per-World) ones
+Options are split by scope: [global](https://github.com/Beltaria/beltariaspigot/wiki/Configuration-Global)
+settings, and [per-world](https://github.com/Beltaria/beltariaspigot/wiki/Configuration-Per-World) ones
 with a page each for the larger sections. The index also lists the handful of defaults that
 deviate from vanilla.
 
