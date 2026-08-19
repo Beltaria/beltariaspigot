@@ -1,0 +1,99 @@
+name: Publish Javadoc
+
+# Unpacks every *-javadoc.jar committed under net/ and serves them as a GitHub Pages site, so
+# the API is browsable without downloading a jar. Nothing is ever committed here: the Pages
+# source is "GitHub Actions", so the site exists only as a deployment artifact and this
+# repository stays a flat Maven tree. Artifact resolution over raw.githubusercontent.com is
+# untouched - a failed deploy here cannot break a plugin build.
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "net/**"
+      - ".github/workflows/pages.yml"
+      - ".github/scripts/build-javadoc-site.sh"
+      - ".github/scripts/test-build-javadoc-site.sh"
+  workflow_dispatch:
+
+# Pages has exactly one production deployment, so unlike the BeltariaSpigot workflows this group
+# is deliberately NOT scoped by github.ref - two refs deploying at once would fight over the same
+# environment and one would fail. Not cancel-in-progress either: deploy-pages killed midway
+# leaves the environment holding a failed deployment. Every run rebuilds the whole site from its
+# own checkout, so serialising them simply means the last one queued wins.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # The site builder has real logic - coordinate derivation, latest resolution, and the
+  # collision and path-traversal refusals - so it is tested before it is trusted with what gets
+  # published. It runs in seconds, and gating build on it means a broken script fails here
+  # instead of deploying a broken site.
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      # Actions pinned to commit SHAs for the same reason as BeltariaSpigot's build.yml: a tag is
+      # mutable. The trailing comment records the version each SHA was.
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+
+      - name: Test the site builder
+        run: bash .github/scripts/test-build-javadoc-site.sh
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # Read-only. pages:read is only there so configure-pages can look the site up; the token that
+    # can actually publish lives in the deploy job, which never checks out a work tree.
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          # Nothing here pushes; don't leave a token in .git/config for the unpack step.
+          persist-credentials: false
+
+      # Invoked through `bash` rather than executed directly: this repository is maintained from
+      # Windows, where git does not reliably record the executable bit.
+      - name: Build the site from the published javadoc jars
+        run: bash .github/scripts/build-javadoc-site.sh
+        env:
+          SITE_DIR: _site
+
+      # Not strictly required for a pre-rendered tree - it is here to fail early with a readable
+      # error if Pages is ever switched away from the "GitHub Actions" source, instead of the
+      # opaque failure deploy-pages produces in that case.
+      - name: Configure Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      # Tars _site and uploads it as the "github-pages" artifact. No Jekyll runs anywhere on this
+      # path - the tarball is served byte for byte, which is why there is no .nojekyll here.
+      - name: Upload the site artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    # id-token is how deploy-pages proves to the Pages API which workflow produced the artifact;
+    # pages:write is the publish grant itself. Deliberately no actions/checkout - this job holds
+    # the only privileged token in the workflow and runs no repository code.
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
