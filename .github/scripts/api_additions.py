@@ -149,6 +149,7 @@ def scan_file(entry, text):
     why, in_block = "", False
     collecting_why = False
     block_owner, block_mark = "", 0
+    block_types = set()
     pending, pending_depth = "", 0
     pending_type = None
 
@@ -158,6 +159,7 @@ def scan_file(entry, text):
         if marker:
             why, in_block, collecting_why, pending = marker.group(1) or "", True, True, ""
             block_owner, block_mark = ".".join(n for n, _ in stack), len(found)
+            block_types = set()
         elif MARKER_END.search(line):
             if in_block and len(found) == block_mark:
                 # A block that declares nothing changed behaviour rather than surface: /reload
@@ -191,7 +193,12 @@ def scan_file(entry, text):
                 candidate = LEADING_ANNOTATION.sub("", pending).strip()
                 member = MEMBER.match(candidate)
                 head = candidate.split(None, 1)[0] if candidate else ""
-                if member and owner and head not in STATEMENTS:
+                inside_new_type = any(n in block_types for n, _ in stack)
+                # A modifier absorbed as the return type means this is a constructor, not a
+                # method: "public Foo(Bar b)" leaves ret="public".
+                looks_like_ctor = bool(member) and member.group("ret").split()[-1] in MODIFIERS
+                if (member and owner and head not in STATEMENTS
+                        and not inside_new_type and not looks_like_ctor):
                     params = split_params(member.group("params"))
                     display = "%s(%s)" % (member.group("name"), ", ".join(params))
                     found.append(Addition(owner, package, "method", member.group("name"),
@@ -203,8 +210,12 @@ def scan_file(entry, text):
                 if pending_type:
                     name, was_in_block, type_why = pending_type
                     if was_in_block:
-                        found.append(Addition(".".join(n for n, _ in stack), package, "type",
-                                              name, [], name, first_sentence(type_why)))
+                        # Nested inside a type this same block introduced? The outer type is
+                        # the addition; its nested types come with it.
+                        if not any(n in block_types for n, _ in stack):
+                            found.append(Addition(".".join(n for n, _ in stack), package, "type",
+                                                  name, [], name, first_sentence(type_why)))
+                        block_types.add(name)
                     stack.append((name, depth))
                     pending_type = None
                 depth += 1

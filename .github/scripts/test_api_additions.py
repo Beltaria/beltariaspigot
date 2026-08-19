@@ -128,7 +128,12 @@ NEW_TYPE_SRC = """package org.spigotmc.event.player;
 
 // BeltariaSpigot start - Paper's armor change event, backported
 public class PlayerArmorChangeEvent extends PlayerEvent {
+    public PlayerArmorChangeEvent(Player player, SlotType slotType) { }
     public SlotType getSlotType() { return slotType; }
+
+    public enum SlotType {
+        public static boolean isEquipable(Material material) { return true; }
+    }
 }
 // BeltariaSpigot end
 """
@@ -176,6 +181,18 @@ class ScanFile(unittest.TestCase):
         kinds = {a.kind: a for a in found}
         self.assertIn("type", kinds)
         self.assertEqual(kinds["type"].name, "PlayerArmorChangeEvent")
+
+    def test_members_of_a_new_type_are_implied_by_the_type(self):
+        # Wrapping a whole new class should list the class, not re-list everything in it.
+        found = self.scan("org/spigotmc/event/player/PlayerArmorChangeEvent.java", NEW_TYPE_SRC)
+        self.assertEqual([(a.kind, a.name) for a in found], [("type", "PlayerArmorChangeEvent")])
+
+    def test_constructors_are_not_listed_as_methods(self):
+        src = INTERFACE_SRC.replace(
+            "    public java.util.concurrent.CompletableFuture<Chunk> getChunkAtAsync(int x, int z);",
+            "    public World(int seed);")
+        found = self.scan("org/bukkit/World.java", src)
+        self.assertNotIn("World", [a.name for a in found])
 
     def test_unmarked_file_yields_nothing(self):
         self.assertEqual(self.scan("org/bukkit/Chunk.java",
