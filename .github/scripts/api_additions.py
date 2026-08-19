@@ -251,12 +251,15 @@ def render(additions, docroot, url_prefix):
         if not any(a.kind in ("method", "type") for a in items):
             continue
 
+        # A type added at the top level of a file has no enclosing type: it IS the page, so
+        # there are no member anchors to resolve and the heading is just the package.
         page_name = owner
         pkg_path = package.replace(".", "/")
-        anchors = javadoc_anchors(docroot / pkg_path / ("%s.html" % page_name))
+        anchors = javadoc_anchors(docroot / pkg_path / ("%s.html" % page_name)) if page_name else {}
         base = "%s/%s/%s.html" % (url_prefix, pkg_path, page_name)
 
-        out.append("<h3><code>%s.%s</code></h3>" % (html.escape(package), html.escape(page_name)))
+        heading = "%s.%s" % (package, page_name) if page_name else package
+        out.append("<h3><code>%s</code></h3>" % html.escape(heading))
 
         # One marker block is one feature; keep them apart so each keeps its own rationale.
         seen_why, blocks = [], {}
@@ -272,7 +275,9 @@ def render(additions, docroot, url_prefix):
             out.append("<ul>")
             for a in blocks[why]:
                 if a.kind == "type":
-                    href = "%s/%s/%s.%s.html" % (url_prefix, pkg_path, page_name, a.name)
+                    # javadoc names a nested type Outer.Inner.html and a top-level one Name.html
+                    qualified = "%s.%s" % (page_name, a.name) if page_name else a.name
+                    href = "%s/%s/%s.html" % (url_prefix, pkg_path, qualified)
                     out.append('<li><a href="%s"><code>%s</code></a> &mdash; new type</li>'
                                % (html.escape(href), html.escape(a.name)))
                     continue

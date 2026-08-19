@@ -226,6 +226,16 @@ class AnchorsAndRender(unittest.TestCase):
         html = m.render(m.scan_file("org/bukkit/World.java", src), self.root, "./x/latest")
         self.assertIn("not in the javadoc", html)
 
+    def test_render_links_a_top_level_new_type_to_its_own_page(self):
+        # A whole new class has no enclosing type; javadoc puts it at <package>/<Name>.html,
+        # not <package>/.<Name>.html.
+        html_out = m.render(m.scan_file("org/spigotmc/event/player/PlayerArmorChangeEvent.java",
+                                        NEW_TYPE_SRC), self.root, "./x/latest")
+        self.assertIn('href="./x/latest/org/spigotmc/event/player/PlayerArmorChangeEvent.html"',
+                      html_out)
+        self.assertNotIn("/.", html_out.replace("./x", "@"))
+        self.assertIn("new type", html_out)
+
     def test_render_is_empty_without_additions(self):
         self.assertEqual(m.render([], self.root, "./x/latest"), "")
 
