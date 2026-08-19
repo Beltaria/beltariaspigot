@@ -48,6 +48,22 @@ The site is built by the **Publish Javadoc** workflow and deployed straight from
 artifact — no HTML is ever committed to this repository, and the Maven tree consumed over
 `raw.githubusercontent.com` is untouched.
 
+## Server configuration
+
+The full `pandaspigot.yml` reference — all 146 options with their types, defaults and
+descriptions — is in this repository's wiki:
+**<https://github.com/Beltaria/maven/wiki/Configuration>**
+
+Options are split by scope: [global](https://github.com/Beltaria/maven/wiki/Configuration-Global)
+settings, and [per-world](https://github.com/Beltaria/maven/wiki/Configuration-Per-World) ones
+with a page each for the larger sections. The index also lists the handful of defaults that
+deviate from vanilla.
+
+Like the javadoc, it is generated — from the Configurate `@Comment` annotations on the server's
+config classes, by the **Publish Wiki** workflow in BeltariaSpigot — so it says exactly what the
+file the server writes says. Do not edit the wiki pages by hand; they are replaced on the next
+publish. Change the `@Comment` on the field instead.
+
 ## Publishing (automated)
 
 Do not commit artifacts here by hand. The **Publish API** workflow in the private
