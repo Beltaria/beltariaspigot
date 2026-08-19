@@ -26,6 +26,29 @@ dependencies {
 }
 ```
 
+Maven (`pom.xml`):
+
+```xml
+<repositories>
+    <repository>
+        <id>beltaria</id>
+        <url>https://raw.githubusercontent.com/Beltaria/beltariaspigot/main/</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>net.beltaria</groupId>
+        <artifactId>beltariaspigot-api</artifactId>
+        <version>1.8.8-R0.1-SNAPSHOT</version>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
+```
+
 Note: raw.githubusercontent.com is CDN-cached for ~5 minutes; freshly published
 artifacts can take that long to appear.
 
