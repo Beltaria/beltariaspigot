@@ -42,6 +42,9 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Test the API-additions parser
+        run: python3 .github/scripts/test_api_additions.py
+
       - name: Test the site builder
         run: bash .github/scripts/test-build-javadoc-site.sh
 

@@ -12,6 +12,7 @@ cd "$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 # unzip ships in the ubuntu-latest runner image, so no setup step is needed - but fail with a
 # readable message rather than "command not found" three levels into a loop.
 command -v unzip >/dev/null || { echo "unzip is required but not installed" >&2; exit 1; }
+command -v python3 >/dev/null || { echo "python3 is required but not installed" >&2; exit 1; }
 [[ -d net ]] || { echo "no net/ directory - nothing to publish" >&2; exit 1; }
 
 rm -rf "$SITE_DIR"
@@ -28,7 +29,9 @@ if [[ ${#javadoc_jars[@]} -eq 0 ]]; then
   exit 1
 fi
 
-declare -A artifact_group=() artifact_dir_of=() artifact_latest=()
+declare -A artifact_group=() artifact_dir_of=() artifact_latest=() artifact_adds=()
+adds_dir="$(mktemp -d)"
+trap 'rm -rf "$adds_dir"' EXIT
 
 for jar in "${javadoc_jars[@]}"; do
   # net/<group...>/<artifactId>/<version>/<anything>-javadoc.jar. The coordinates come from the
@@ -91,6 +94,18 @@ for artifact_id in "${!artifact_group[@]}"; do
   # index.html would redirect the landing page only and 404 everything underneath it.
   cp -a "$SITE_DIR/$artifact_id/$latest" "$SITE_DIR/$artifact_id/latest"
   echo "$artifact_id: latest -> $latest"
+
+  # The sources jar carries the // BeltariaSpigot markers the jar itself cannot, so the list of
+  # what this fork adds is derived from the artifact rather than maintained by hand. Absent
+  # sources jar, or an artifact with no markers, simply produces no section.
+  sources_jar="$(find "${artifact_dir_of[$artifact_id]}/$latest" -maxdepth 1 -type f                       -name '*-sources.jar' | sort | head -n1)"
+  if [[ -n $sources_jar ]]; then
+    artifact_adds[$artifact_id]="$adds_dir/$artifact_id.html"
+    python3 "$(dirname "${BASH_SOURCE[0]}")/api_additions.py"       "$sources_jar" "$SITE_DIR/$artifact_id/$latest" "./$artifact_id/latest"       > "${artifact_adds[$artifact_id]}"
+    if [[ -s ${artifact_adds[$artifact_id]} ]]; then
+      echo "$artifact_id: $(grep -c "<li>" "${artifact_adds[$artifact_id]}") documented additions"
+    fi
+  fi
 done
 
 {
@@ -106,6 +121,8 @@ done
          margin: 3rem auto; padding: 0 1.25rem; color: #1f2328; }
   h1 { font-size: 1.5rem; margin-bottom: .25rem; }
   h2 { font-size: 1.05rem; margin: 2rem 0 .25rem; font-family: ui-monospace, SFMono-Regular, monospace; }
+  h3 { font-size: .98rem; margin: 1.5rem 0 .2rem; font-weight: 600; }
+  h3 code { background: none; padding: 0; }
   p.sub { color: #59636e; margin-top: 0; font-size: .92rem; }
   code { background: #f6f8fa; border-radius: 4px; padding: .1em .35em; font-size: .9em; }
   ul { padding-left: 1.2rem; } li { margin: .15rem 0; }
@@ -133,6 +150,9 @@ HTML
     done < <(find "$SITE_DIR/$artifact_id" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' \
              | grep -vx latest | sort -Vr)
     printf '</ul>\n'
+    if [[ -s ${artifact_adds[$artifact_id]:-} ]]; then
+      cat "${artifact_adds[$artifact_id]}"
+    fi
   done
 
   printf '<p class="sub">Generated %s from %s.</p>\n</body>\n</html>\n' \

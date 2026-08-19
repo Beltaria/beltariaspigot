@@ -32,6 +32,12 @@ Browsable API docs, unpacked from the published `-javadoc.jar` on every publish:
 version is also served at `/beltariaspigot-api/1.8.8-R0.1-SNAPSHOT/`. The index at
 <https://beltaria.github.io/maven/> lists everything available.
 
+That index also carries a **What BeltariaSpigot adds** section: every API addition this
+fork makes on top of PandaSpigot, deep-linked into the javadoc. It is generated from the
+`// BeltariaSpigot` markers in the published sources jar, so it cannot drift from the
+artifact it documents - keep wrapping API patches in those markers and new additions show
+up on their own.
+
 Downstream javadoc builds can cross-link into it:
 
 ```

@@ -20,7 +20,7 @@ check() { if [[ $1 == 0 ]]; then ok "$2"; else bad "$2"; fi; }
 new_fixture() {
   local fx="$tmp_root/$1"
   mkdir -p "$fx/.github/scripts"
-  cp "$under_test" "$fx/.github/scripts/"
+  cp "$under_test" "$script_dir/api_additions.py" "$fx/.github/scripts/"
   printf '%s' "$fx"
 }
 
@@ -130,6 +130,27 @@ publish "$fx" net/beltaria api 1.0
 mkdir -p -- "$fx/net/beltaria/api/-nope"
 cp "$fx/net/beltaria/api/1.0/api-1.0-javadoc.jar" "$fx/net/beltaria/api/-nope/api--nope-javadoc.jar"
 ! run_site "$fx" >/dev/null 2>&1; check $? "fails on a version outside the safe charset"
+
+echo "api additions"
+fx="$(new_fixture additions)"
+publish "$fx" net/beltaria api 1.0
+# A sources jar carrying the markers is what becomes the "What BeltariaSpigot adds" section.
+make_jar "$fx/net/beltaria/api/1.0/api-1.0-sources.jar" \
+  'org/bukkit/World.java=package org.bukkit;
+public interface World {
+    // BeltariaSpigot start - async chunks
+    public Chunk getChunkAtAsync(int x, int z);
+    // BeltariaSpigot end
+}'
+run_site "$fx" >/dev/null 2>&1; check $? "script succeeds with a sources jar"
+grep -q "What BeltariaSpigot adds" "$fx/_site/index.html"; check $? "renders the additions section"
+grep -q "getChunkAtAsync(int, int)" "$fx/_site/index.html"; check $? "lists the added member"
+grep -q "async chunks" "$fx/_site/index.html";             check $? "shows the marker rationale"
+
+fx="$(new_fixture no-sources)"
+publish "$fx" net/beltaria api 1.0
+run_site "$fx" >/dev/null 2>&1; check $? "script succeeds without a sources jar"
+! grep -q "What BeltariaSpigot adds" "$fx/_site/index.html"; check $? "omits the section when there is nothing to say"
 
 printf '\n%d passed, %d failed\n' "$passed" "$failed"
 [[ $failed -eq 0 ]]
