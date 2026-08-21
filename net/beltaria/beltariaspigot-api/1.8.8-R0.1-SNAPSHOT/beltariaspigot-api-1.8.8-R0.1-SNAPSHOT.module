@@ -134,10 +134,10 @@
           "name": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT.jar",
           "url": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT.jar",
           "size": 1009058,
-          "sha512": "1d42a156a5236b31de1ae5c7db55330113b84e2f83e8424a46010d9da00157710a819485a5e269e2ae15f485b0ffcd80bd408c991c765791be008e04b30fe427",
-          "sha256": "d4059b468e1c8e473c4416934440a7a6150dfb83503b07e7ee3a28748b5b96f7",
-          "sha1": "9535fdc2f6f10911fec2ac94707a90fea99763fa",
-          "md5": "465434ca9fbfd0461b0f751249bf1419"
+          "sha512": "d8e438f7a1ef9356bd784ab0c6538953597ca8dea489eb332a274467702f4b8979b32e450a34503e6a21ba75ae1915ea8a6c874eaa6f476b8660c9d75d28018f",
+          "sha256": "828bb904e4d5d035a15dfa8eae0926217d41a8d6fc288928be5ca3eeb899007e",
+          "sha1": "4574b189a3c96d0cf2b1222cc57143ea3240e8f4",
+          "md5": "6fdc9429e640b7c4fd79dcd01f61167c"
         }
       ]
     },
@@ -254,10 +254,10 @@
           "name": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT.jar",
           "url": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT.jar",
           "size": 1009058,
-          "sha512": "1d42a156a5236b31de1ae5c7db55330113b84e2f83e8424a46010d9da00157710a819485a5e269e2ae15f485b0ffcd80bd408c991c765791be008e04b30fe427",
-          "sha256": "d4059b468e1c8e473c4416934440a7a6150dfb83503b07e7ee3a28748b5b96f7",
-          "sha1": "9535fdc2f6f10911fec2ac94707a90fea99763fa",
-          "md5": "465434ca9fbfd0461b0f751249bf1419"
+          "sha512": "d8e438f7a1ef9356bd784ab0c6538953597ca8dea489eb332a274467702f4b8979b32e450a34503e6a21ba75ae1915ea8a6c874eaa6f476b8660c9d75d28018f",
+          "sha256": "828bb904e4d5d035a15dfa8eae0926217d41a8d6fc288928be5ca3eeb899007e",
+          "sha1": "4574b189a3c96d0cf2b1222cc57143ea3240e8f4",
+          "md5": "6fdc9429e640b7c4fd79dcd01f61167c"
         }
       ]
     },
@@ -273,11 +273,11 @@
         {
           "name": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT-sources.jar",
           "url": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT-sources.jar",
-          "size": 712011,
-          "sha512": "fe40d56d2fbd57474fb8990e8401274c6e8e0a071e0de998506f83317ef015860d3deee4638cf78bab3f58fdf3fb3c15081a76b435e9fbd82abcc645086914a7",
-          "sha256": "f6120767edd9d8b88daeaee9a97a6106e248b28f0500b5d6d2a9f403a20e41b9",
-          "sha1": "401e274176fd9effc263d5faf2ec34b0f58689b9",
-          "md5": "51c91f6d19053b5673121c93d2ff6c54"
+          "size": 712286,
+          "sha512": "226cf3f9b574e7f899594a28b69c47b672d43915789aefa0c2182879eff72afbdd7463edcec16821758ff60357004822b3956a3f0e0adb0347d4351d28d4f002",
+          "sha256": "2f9b484b2d94c00e42f7742278d85510444facdd033914594428ea354b7308c5",
+          "sha1": "5496f9f9a4fab1fe83e5b7c1d0032b3e22b19f66",
+          "md5": "1432ac34ec057778e4109d0ee441c950"
         }
       ]
     },
