@@ -133,11 +133,11 @@
         {
           "name": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT.jar",
           "url": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT.jar",
-          "size": 1011166,
-          "sha512": "432a711d2fa77043b7547ac9f0d7902cffe88ed2f4c6647b4c677d911239fce6bbabac67717a9a126b5b58d6c6a356922807d2d7998b037618ec815b1ca68ec6",
-          "sha256": "b52fbd229beffbe8bfb8986442f6033b723d3345316836a31a36dc26f96f7d83",
-          "sha1": "57b0ed3b39514afe55577b196b9ae0f8a8b39263",
-          "md5": "0209122df8c9015b4eec9c287bcab771"
+          "size": 1023749,
+          "sha512": "b5c037712fe6ef4f68a867d4172c3866a521de1d048e2e74654bb7dd6177cb6a1edb1601ccc93fba19e8304af79610048c5c6a8ef266872e262c7b6820ad9a3b",
+          "sha256": "824a7a888f7ba1e346da644ead25e1c53ec05e8c971f968aedd3bc172cdf060a",
+          "sha1": "5165e4eccf8dd6d5de8b860b76a05db4190ecc8f",
+          "md5": "8c6222624748c4a8c5303f99ee989ef4"
         }
       ]
     },
@@ -253,11 +253,11 @@
         {
           "name": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT.jar",
           "url": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT.jar",
-          "size": 1011166,
-          "sha512": "432a711d2fa77043b7547ac9f0d7902cffe88ed2f4c6647b4c677d911239fce6bbabac67717a9a126b5b58d6c6a356922807d2d7998b037618ec815b1ca68ec6",
-          "sha256": "b52fbd229beffbe8bfb8986442f6033b723d3345316836a31a36dc26f96f7d83",
-          "sha1": "57b0ed3b39514afe55577b196b9ae0f8a8b39263",
-          "md5": "0209122df8c9015b4eec9c287bcab771"
+          "size": 1023749,
+          "sha512": "b5c037712fe6ef4f68a867d4172c3866a521de1d048e2e74654bb7dd6177cb6a1edb1601ccc93fba19e8304af79610048c5c6a8ef266872e262c7b6820ad9a3b",
+          "sha256": "824a7a888f7ba1e346da644ead25e1c53ec05e8c971f968aedd3bc172cdf060a",
+          "sha1": "5165e4eccf8dd6d5de8b860b76a05db4190ecc8f",
+          "md5": "8c6222624748c4a8c5303f99ee989ef4"
         }
       ]
     },
@@ -273,11 +273,11 @@
         {
           "name": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT-sources.jar",
           "url": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT-sources.jar",
-          "size": 717766,
-          "sha512": "42c32b2a6585085bb8084667e8c56f4edae71f6954c97bd9956aaa935592d34f0702697706f480dc98b7aea8200049a81464675bac52306d573c71db8abb8b1f",
-          "sha256": "9973db6a90df6f7ad1823b1686d3f604487a7ea63f27021eb6bf782b7fb63797",
-          "sha1": "5793eb62fb81fc205c76f58f59fc30a9af8bddb1",
-          "md5": "acf066d728a53bffcf7e918bfce0d759"
+          "size": 730595,
+          "sha512": "30859d6eb2bdd137fdb68b6612fc25c04b702946664cd5820a0bca2aa026ae83756b1da190a9b69fbd137a4338183fe1c35662e41f3d3d060cef1d4083c80b56",
+          "sha256": "050be9db2db95f1d17cbcb34e87ac924f208f0df57a1a4ecc0b15fc34c9328ff",
+          "sha1": "07bf4518afaa3fb816f080dcb5e60603dde3e1be",
+          "md5": "ba944a037620b7e045e4932aea1f1fb7"
         }
       ]
     },
@@ -293,11 +293,11 @@
         {
           "name": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT-javadoc.jar",
           "url": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT-javadoc.jar",
-          "size": 3668195,
-          "sha512": "2959e0ea99f7c21c6ef53a8bbb87acbdcafc63adcc906310ca6cf114bd466ee31d0efa973a9c909cea07e23bb8af9ce34a20f7bb27c33efa281168f394b4cd5a",
-          "sha256": "7be0fd7af50beff499ab9dbee38d80f96ad59d43a4fd78836a1cc7103c8164a4",
-          "sha1": "210143055fd94e219cefc8a31a7147638ab18945",
-          "md5": "4e650459a5a54ff429d69d45a1db8fdf"
+          "size": 3755642,
+          "sha512": "1f3d5a9f06949e918381c9d3243c1415634126a747b437a02be217e75752f7794c78062b9f304250162732bbda331180cb28d9f6adbca84cc92e52ce3ec9c9a2",
+          "sha256": "bb9612df38b78c777ba5559808bd296619989609225ea437d378ce46b563a54a",
+          "sha1": "ca81e1ea8e53345be2960a244ee7b0499e314f41",
+          "md5": "3128829a08900161a2a1131ebd7afb19"
         }
       ]
     }
