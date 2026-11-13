@@ -19,7 +19,7 @@
       "attributes": {
         "org.gradle.category": "library",
         "org.gradle.dependency.bundling": "external",
-        "org.gradle.jvm.version": 8,
+        "org.gradle.jvm.version": 25,
         "org.gradle.libraryelements": "jar",
         "org.gradle.usage": "java-api"
       },
@@ -55,7 +55,7 @@
           "group": "org.yaml",
           "module": "snakeyaml",
           "version": {
-            "requires": "1.33"
+            "requires": "2.7"
           }
         },
         {
@@ -69,56 +69,56 @@
           "group": "net.kyori",
           "module": "adventure-api",
           "version": {
-            "requires": "4.24.0"
+            "requires": "5.2.0"
           }
         },
         {
           "group": "net.kyori",
           "module": "adventure-text-minimessage",
           "version": {
-            "requires": "4.24.0"
+            "requires": "5.2.0"
           }
         },
         {
           "group": "net.kyori",
           "module": "adventure-text-serializer-legacy",
           "version": {
-            "requires": "4.24.0"
+            "requires": "5.2.0"
           }
         },
         {
           "group": "net.kyori",
           "module": "adventure-text-serializer-gson",
           "version": {
-            "requires": "4.24.0"
+            "requires": "5.2.0"
           }
         },
         {
           "group": "net.kyori",
           "module": "adventure-text-serializer-plain",
           "version": {
-            "requires": "4.24.0"
+            "requires": "5.2.0"
           }
         },
         {
           "group": "com.google.guava",
           "module": "guava",
           "version": {
-            "requires": "18.0"
+            "requires": "33.8.0-jre"
           }
         },
         {
           "group": "com.google.code.gson",
           "module": "gson",
           "version": {
-            "requires": "2.14.0"
+            "requires": "2.15.0"
           }
         },
         {
           "group": "org.slf4j",
           "module": "slf4j-api",
           "version": {
-            "requires": "1.7.35"
+            "requires": "2.0.20"
           }
         },
         {
@@ -133,11 +133,11 @@
         {
           "name": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT.jar",
           "url": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT.jar",
-          "size": 1046390,
-          "sha512": "0b79c2ad691821a8f69bfea985b863f025ea2199ed67e0f47c7693c49dde3f0ad3f8ebda282dab1c91d56affe3295439318e73499062268f2cdaff3f797d8cfd",
-          "sha256": "5f23c41ab9e3eabc411d9a9f83a98b48441e1b4daec38465eb2db6246d1497d6",
-          "sha1": "f85f87eaaace248a720852fe5136ff55b277193d",
-          "md5": "8fdce3f527731da4eb7851b73bfa97e7"
+          "size": 1062454,
+          "sha512": "ddad55a1669bc9748b97c690bdbf52bd648b9a5d1cf16345145b59d9fab23cbbd1cfac2ee8de0fa6231e79feed27cd8b175712ecd598b50f3c5069bb52a9bb6d",
+          "sha256": "4c3b8b2a9ad0fd1b410438a9a2916df90b528c76a98b843e314d90e24e62de46",
+          "sha1": "613de0aaf6c1cb3889942425d7b662e5cc4fc965",
+          "md5": "f589035df5af485429df5f3ec31bb99f"
         }
       ]
     },
@@ -146,7 +146,7 @@
       "attributes": {
         "org.gradle.category": "library",
         "org.gradle.dependency.bundling": "external",
-        "org.gradle.jvm.version": 8,
+        "org.gradle.jvm.version": 25,
         "org.gradle.libraryelements": "jar",
         "org.gradle.usage": "java-runtime"
       },
@@ -182,7 +182,7 @@
           "group": "org.yaml",
           "module": "snakeyaml",
           "version": {
-            "requires": "1.33"
+            "requires": "2.7"
           }
         },
         {
@@ -196,56 +196,56 @@
           "group": "net.kyori",
           "module": "adventure-api",
           "version": {
-            "requires": "4.24.0"
+            "requires": "5.2.0"
           }
         },
         {
           "group": "net.kyori",
           "module": "adventure-text-minimessage",
           "version": {
-            "requires": "4.24.0"
+            "requires": "5.2.0"
           }
         },
         {
           "group": "net.kyori",
           "module": "adventure-text-serializer-legacy",
           "version": {
-            "requires": "4.24.0"
+            "requires": "5.2.0"
           }
         },
         {
           "group": "net.kyori",
           "module": "adventure-text-serializer-gson",
           "version": {
-            "requires": "4.24.0"
+            "requires": "5.2.0"
           }
         },
         {
           "group": "net.kyori",
           "module": "adventure-text-serializer-plain",
           "version": {
-            "requires": "4.24.0"
+            "requires": "5.2.0"
           }
         },
         {
           "group": "com.google.guava",
           "module": "guava",
           "version": {
-            "requires": "18.0"
+            "requires": "33.8.0-jre"
           }
         },
         {
           "group": "com.google.code.gson",
           "module": "gson",
           "version": {
-            "requires": "2.14.0"
+            "requires": "2.15.0"
           }
         },
         {
           "group": "org.slf4j",
           "module": "slf4j-api",
           "version": {
-            "requires": "1.7.35"
+            "requires": "2.0.20"
           }
         }
       ],
@@ -253,11 +253,11 @@
         {
           "name": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT.jar",
           "url": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT.jar",
-          "size": 1046390,
-          "sha512": "0b79c2ad691821a8f69bfea985b863f025ea2199ed67e0f47c7693c49dde3f0ad3f8ebda282dab1c91d56affe3295439318e73499062268f2cdaff3f797d8cfd",
-          "sha256": "5f23c41ab9e3eabc411d9a9f83a98b48441e1b4daec38465eb2db6246d1497d6",
-          "sha1": "f85f87eaaace248a720852fe5136ff55b277193d",
-          "md5": "8fdce3f527731da4eb7851b73bfa97e7"
+          "size": 1062454,
+          "sha512": "ddad55a1669bc9748b97c690bdbf52bd648b9a5d1cf16345145b59d9fab23cbbd1cfac2ee8de0fa6231e79feed27cd8b175712ecd598b50f3c5069bb52a9bb6d",
+          "sha256": "4c3b8b2a9ad0fd1b410438a9a2916df90b528c76a98b843e314d90e24e62de46",
+          "sha1": "613de0aaf6c1cb3889942425d7b662e5cc4fc965",
+          "md5": "f589035df5af485429df5f3ec31bb99f"
         }
       ]
     },
@@ -273,11 +273,11 @@
         {
           "name": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT-sources.jar",
           "url": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT-sources.jar",
-          "size": 749905,
-          "sha512": "39eff7e2ee2b8334e0c15ca604bec0b7b8a3ed54b0ecb4e68042a6b33cec16ad583dc58fe27e511b010676bc8f478d342550ddff3177610ab2a9f8dc32963931",
-          "sha256": "cceabd6412941a72b902c87dc4be61731eec334d20dfaa267c95bf4a9445b33b",
-          "sha1": "07aacbf93028e18db52a3565e9a0ed9eb52c5d4a",
-          "md5": "cee981dac672825d17c2a1d5f0a2fc3b"
+          "size": 750561,
+          "sha512": "7adccc8746748f201981d40c68c1f6c6b0287bd5709fe81da1ec328fa3ae28ba6dbb6e4ae1d5917799cdf52206c9cdc0e30e58cbbf93ba69ff8c3358785f0743",
+          "sha256": "b40228b544993fabc9c668cd7ed31207bab0677e26e25ed34fdad8df2d42e458",
+          "sha1": "c031842cd05fa19a191c97c2986d501c2365285f",
+          "md5": "2eab7f562ff5e72906d3441f91430952"
         }
       ]
     },
@@ -293,11 +293,11 @@
         {
           "name": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT-javadoc.jar",
           "url": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT-javadoc.jar",
-          "size": 3808733,
-          "sha512": "c550534094e153fa8cf70fd0ee5e605baa2c6ed0cee4016fb93f920034fffab6c65450101c354b8654892297c2ebc02f2acac452a64a818b65d9c11cde3f664e",
-          "sha256": "a3cfc297044339ea42e506e3d9877bb6590f2b829ad5bb578dd38a9cbf4b8525",
-          "sha1": "ef99ca9a02c5d837d97d29370b59be4f05549209",
-          "md5": "847ebb98f53f5902f8651a768fcb407c"
+          "size": 8131335,
+          "sha512": "59574fcb812cf4e77cb4e2f389d57deab015b67c32807c64237176c0ef0f285912fdf9b6a1ffdba2e24778d7613209650090de7899d2667fba09dba6a8dff24d",
+          "sha256": "59780f0da9723e94a869cec2de0531b390af5283de6b00fee7cf1ce2b1a86643",
+          "sha1": "5cab379896b9a4cf6035645a6390dc462afbbcfb",
+          "md5": "e89da654a74bad4a265013ae48f09fd1"
         }
       ]
     }
