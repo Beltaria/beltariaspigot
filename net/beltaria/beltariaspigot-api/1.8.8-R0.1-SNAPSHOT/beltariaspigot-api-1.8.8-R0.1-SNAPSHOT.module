@@ -120,24 +120,17 @@
           "version": {
             "requires": "2.0.20"
           }
-        },
-        {
-          "group": "net.sf.trove4j",
-          "module": "trove4j",
-          "version": {
-            "requires": "3.0.3"
-          }
         }
       ],
       "files": [
         {
           "name": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT.jar",
           "url": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT.jar",
-          "size": 1064098,
-          "sha512": "8585ea03cbf206e4c298fedc840be84df66fbe0de0948c820866d3e2a0d5b9d20e8bb440e35ee55de21fc0c26835ab62db8cd97b7d200e3cdf79d662b23182f5",
-          "sha256": "df816ebdb9d408c90e74f9b370ccc7ca539d8549f689db0d68455125c646d95c",
-          "sha1": "8ab793830caf4f2c901c103b2ccbcca94722f538",
-          "md5": "0079b4229a8e5d71a672b91cd150eaf1"
+          "size": 1064154,
+          "sha512": "05f1fc20d4e3fcf5a7b0bdef35e9bf38b1541351dc5e4fd961ff6cf194928cede31efcd85b11ef32bb9086054419a6ee78eb1b08708a179243153eb6dbcd5b15",
+          "sha256": "a7c93a1bf72fdc203a71c39331609f28d6da260328a36e8da733ae0b7996a14b",
+          "sha1": "b1ff3d4665c37c1ab63edea3004260cf68fc7eed",
+          "md5": "87a6810ee96a9f6a8607e9b93f86a39a"
         }
       ]
     },
@@ -253,11 +246,11 @@
         {
           "name": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT.jar",
           "url": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT.jar",
-          "size": 1064098,
-          "sha512": "8585ea03cbf206e4c298fedc840be84df66fbe0de0948c820866d3e2a0d5b9d20e8bb440e35ee55de21fc0c26835ab62db8cd97b7d200e3cdf79d662b23182f5",
-          "sha256": "df816ebdb9d408c90e74f9b370ccc7ca539d8549f689db0d68455125c646d95c",
-          "sha1": "8ab793830caf4f2c901c103b2ccbcca94722f538",
-          "md5": "0079b4229a8e5d71a672b91cd150eaf1"
+          "size": 1064154,
+          "sha512": "05f1fc20d4e3fcf5a7b0bdef35e9bf38b1541351dc5e4fd961ff6cf194928cede31efcd85b11ef32bb9086054419a6ee78eb1b08708a179243153eb6dbcd5b15",
+          "sha256": "a7c93a1bf72fdc203a71c39331609f28d6da260328a36e8da733ae0b7996a14b",
+          "sha1": "b1ff3d4665c37c1ab63edea3004260cf68fc7eed",
+          "md5": "87a6810ee96a9f6a8607e9b93f86a39a"
         }
       ]
     },
@@ -273,11 +266,11 @@
         {
           "name": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT-sources.jar",
           "url": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT-sources.jar",
-          "size": 752083,
-          "sha512": "36e5cc3f1c03cbe86752eaa8565227da5117c73799651e7c8eaea884408dba1e762e6893700fd8fe45a15f1a5e2c1f68736a04da19f70081866469e3a0d62e03",
-          "sha256": "39f6f6d731949388de3edf3e3e494c356d15747008fcab6cc77d17e8617fe26b",
-          "sha1": "966be717ec18653df7f917207b5b9cb9ae9fa051",
-          "md5": "8d96088d5a6817a94e9d7b1297cdec7c"
+          "size": 752268,
+          "sha512": "c8e261a0de166c546521df895a5480f8d30ecbbd3288d610630e037e8086c2ed71eaa3c09fc281384ebd9156a8ab8fd5bea8a6e2eed874f39ef9120b7947d700",
+          "sha256": "59620422383b2891ef4f01cf12fa45e783e24abec05551c059ac148de5232103",
+          "sha1": "24aa71d5d16083f8b4273c7d0fdc6c163fc7afd7",
+          "md5": "9d3ffecb14f6cec6d810ebf9d069dc3f"
         }
       ]
     },
@@ -293,11 +286,11 @@
         {
           "name": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT-javadoc.jar",
           "url": "beltariaspigot-api-1.8.8-R0.1-SNAPSHOT-javadoc.jar",
-          "size": 8131335,
-          "sha512": "59574fcb812cf4e77cb4e2f389d57deab015b67c32807c64237176c0ef0f285912fdf9b6a1ffdba2e24778d7613209650090de7899d2667fba09dba6a8dff24d",
-          "sha256": "59780f0da9723e94a869cec2de0531b390af5283de6b00fee7cf1ce2b1a86643",
-          "sha1": "5cab379896b9a4cf6035645a6390dc462afbbcfb",
-          "md5": "e89da654a74bad4a265013ae48f09fd1"
+          "size": 8131572,
+          "sha512": "16708c416ff879c7010b0b3b77a1e974ac0653fed730927bfb8cd474c5e26997ffb98cec0e7188a2210cc9a7faad951d13a4432ea17823f2cebde08dd03f2a06",
+          "sha256": "99018db91505665da10d064256d83ef5fb96f74533c34f6341143e1a9f02908e",
+          "sha1": "5124d9e13703800f41b3cb2fe38fbd4622489749",
+          "md5": "9889bc28fe9136a240020b345ba269fc"
         }
       ]
     }
